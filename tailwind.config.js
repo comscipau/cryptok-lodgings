@@ -12,6 +12,7 @@ module.exports = {
         banner: "url('/src/assets/BANNER_1.png')",
         banner_mobile: "url('/src/assets/CROWDMOBILE_2.png')",
         ticket: "url('/src/assets/BLANK_TICKET_1.png')",
+        ticket_mobile: "url('/src/assets/BLANK_TICKET_MOBILE.png')",
       },
     },
   },

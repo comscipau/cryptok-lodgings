@@ -3,6 +3,7 @@ import LOGO from "../assets/LOGO_PNG_DARK_1.png";
 import styles from "../styles";
 import { FaTelegramPlane, FaTwitter, FaDiscord } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -12,8 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    // <div className="fixed w-screen bg-gold bg-opacity-50">
-    <div className="absolute w-full">
+    <div className="fixed w-screen bg-gold z-40">
+      {/* <div className="absolute w-full"> */}
       <div
         className={`${styles._marginX} pt-6 md:pt-8 mb-2 flex justify-between`}
       >
@@ -25,8 +26,12 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex">
           <ul className="flex items-center">
-            <li className="hover:cursor-pointer">HOME</li>
-            <li className="ml-4 hover:cursor-pointer">RAFFLE</li>
+            <li className="hover:cursor-pointer">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="ml-4 hover:cursor-pointer">
+              <Link to="/raffle">Raffle</Link>
+            </li>
             <li className="ml-4 mr-14 hover:cursor-pointer">ABOUT US</li>
           </ul>
           <div className="flex">
@@ -55,16 +60,22 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gold bg-[#0d0d0d] ease-in-out duration-500"
-              : "fixed left-[-100%] top-0 w-[60%] h-full ease-in-out duration-500"
+              ? "fixed left-0 top-0 w-[60%] h-full z-50 border-r border-r-gold bg-[#0d0d0d] ease-in-out duration-500"
+              : "fixed left-[-100%] top-0 w-[60%] h-full z-50 ease-in-out duration-500"
           }
         >
           <ul className="uppercase p-4 text-gold">
-            <li className="p-4 border-b border-gold hover:cursor-pointer">
-              HOME
+            <li
+              className="p-4 border-b border-gold hover:cursor-pointer"
+              onClick={handleNav}
+            >
+              <Link to="/">Home</Link>
             </li>
-            <li className="p-4 border-b border-gold hover:cursor-pointer">
-              RAFFLE
+            <li
+              className="p-4 border-b border-gold hover:cursor-pointer"
+              onClick={handleNav}
+            >
+              <Link to="/raffle">RAFFLE</Link>
             </li>
             <li className="p-4 border-b border-gold hover:cursor-pointer">
               ABOUT US

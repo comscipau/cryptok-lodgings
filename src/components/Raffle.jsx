@@ -6,25 +6,31 @@ import TICKET1 from "../assets/FLYING_TICKET_1.png";
 import TICKET2 from "../assets/FLYING_TICKET_2.png";
 
 const Raffle = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full">
       <div className="h-96 bg-gold" />
-      <div className="-mt-[10.5rem] flex justify-center">
+      <div className="-mt-[15rem] lg:-mt-[10.5rem] flex justify-center">
         <BannerTicket />
       </div>
       <button
         className="flex items-center border-[3px] border-gold text-white rounded-lg font-medium 
-        text-base py-4 px-14 mt-10 mb-5 mx-auto"
+        text-base py-4 px-14 mt-16 lg:mt-10 mb-5 mx-auto"
       >
         Buy Raffle Tickets
         <span className="ml-3 text-2xl">
           <FaAngleRight />
         </span>
       </button>
-      <p className="text-center text-white font-bold text-[3.5rem] mt-12">
+      <p className="text-center text-white font-semibold text-5xl mb-12 md:mb-0 mt-[4.13rem] md:mt-12 md:font-bold md:text-[3.5rem] ">
         HOW TO PLAY
       </p>
-      <div className={`${styles._marginX} grid grid-cols-3 gap-8 mb-14 mt-10`}>
+      <div
+        className={`${styles._marginX} grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14 mt-10`}
+      >
         <div>
           <p className="text-white font-normal text-lg">STEP 01</p>
           <p className="my-2 font-semibold text-4xl text-gold">Buy a ticket</p>

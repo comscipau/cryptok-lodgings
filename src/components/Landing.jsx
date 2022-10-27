@@ -4,6 +4,10 @@ import { FaAngleRight } from "react-icons/fa";
 // import BANNER_MOBILE from "../assets/CROWDMOBILE_2.png";
 
 const Landing = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="hidden md:block bg-banner h-[557px] w-screen bg-no-repeat bg-cover bg-center" />
