@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
         <div
           onClick={handleNav}
-          className="flex items-center lg:hidden hover:cursor-pointer"
+          className="flex items-center lg:hidden hover:cursor-pointer pr-5"
         >
           {nav ? <AiOutlineClose size={32} /> : <AiOutlineMenu size={32} />}
         </div>

@@ -12,8 +12,8 @@ const Raffle = () => {
 
   return (
     <div className="w-full">
-      <div className="h-96 bg-gold" />
-      <div className="-mt-[15rem] lg:-mt-[10.5rem] flex justify-center">
+      <div className="h-[21.5rem] bg-gold" />
+      <div className="-mt-[11.5rem] lg:-mt-[10.5rem] flex justify-center">
         <BannerTicket />
       </div>
       <button

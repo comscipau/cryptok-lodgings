@@ -10,17 +10,17 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="hidden md:block bg-banner h-[557px] w-screen bg-no-repeat bg-cover bg-center" />
-      <div className="block md:hidden bg-gold h-[557px] w-screen">
+      <div className="hidden md:block bg-banner h-[510px] w-screen bg-no-repeat bg-cover bg-center" />
+      <div className="block md:hidden bg-gold h-[510px] w-screen">
         <div className={`${styles._marginX}`}>
-          <p className="font-semibold text-4xl text-center pt-32">
+          <p className="font-semibold text-4xl text-center pt-28">
             Cryptok Lodgings
           </p>
           <p className="font-semibold text-lg text-center mt-2">
             YOUR NETWORK, IS YOUR NETWORTH.
           </p>
         </div>
-        <div className="block md:hidden bg-banner_mobile -mt-3 h-[557px] w-screen bg-no-repeat bg-cover bg-bottom" />
+        <div className="block md:hidden bg-banner_mobile -mt-[7rem] sm:-mt-[2rem] h-[557px] w-screen bg-no-repeat bg-contain bg-center" />
       </div>
       <div className={`${styles._marginX}`}>
         <p className="hidden md:block text-surface_muted text-[3.63rem] font-bold mt-12 text-center">
