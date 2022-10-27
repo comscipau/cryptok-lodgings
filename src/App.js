@@ -1,13 +1,15 @@
-import Hero from "./components/Hero";
-import HowToPlay from "./components/HowToPlay";
+import Footer from "./components/Footer";
+import Landing from "./components/Landing";
 import Navbar from "./components/Navbar";
+import Raffle from "./components/Raffle";
 
 function App() {
   return (
     <div className="overflow-hidden">
-      <Navbar/>
-      <Hero/>
-      <HowToPlay/>
+      <Navbar />
+      <Landing />
+      {/* <Raffle /> */}
+      <Footer />
     </div>
   );
 }
