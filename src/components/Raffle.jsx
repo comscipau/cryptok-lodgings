@@ -4,11 +4,14 @@ import { FaAngleRight } from "react-icons/fa";
 import styles from "../styles";
 import TICKET1 from "../assets/FLYING_TICKET_1.png";
 import TICKET2 from "../assets/FLYING_TICKET_2.png";
+import { approveUSD,participate,getFactoryContract } from "../connection";
 
-const Raffle = () => {
+const Raffle = (props) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  
 
   return (
     <div className="w-full">
@@ -18,7 +21,22 @@ const Raffle = () => {
       </div>
       <button
         className="flex items-center border-[3px] border-gold text-white rounded-lg font-medium 
-        text-base py-4 px-14 mt-16 lg:mt-10 mb-5 mx-auto"
+        text-base py-4 px-14 mt-16 lg:mt-10 mb-5 mx-auto" onClick={async()=>{
+          await approveUSD();
+        }}
+      >
+        Approve USD
+        <span className="ml-3 text-2xl">
+          <FaAngleRight />
+        </span>
+      </button>
+      <button
+        className="flex items-center border-[3px] border-gold text-white rounded-lg font-medium 
+        text-base py-4 px-14 mt-16 lg:mt-10 mb-5 mx-auto" onClick={async()=>{
+          await participate();
+          props.up(false);
+
+        }}
       >
         Buy Raffle Tickets
         <span className="ml-3 text-2xl">
@@ -34,26 +52,19 @@ const Raffle = () => {
         <div>
           <p className="text-white font-normal text-lg">STEP 01</p>
           <p className="my-2 font-semibold text-4xl text-gold">Buy a ticket</p>
-          <p className="text-white font-normal text-base">
-            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem.
-          </p>
+          
         </div>
         <div>
           <p className="text-white font-normal text-lg">STEP 02</p>
           <p className="my-2 font-semibold text-4xl text-gold">
             Wait for the Draw
           </p>
-          <p className="text-white font-normal text-base">
-            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem.
-          </p>
+          
         </div>
         <div>
           <p className="text-white font-normal text-lg">STEP 03</p>
           <p className="my-2 font-semibold text-4xl text-gold">
-            Check for Prizes
-          </p>
-          <p className="text-white font-normal text-base">
-            Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem.
+            Check for Winner, prize is distributed automatically
           </p>
         </div>
       </div>

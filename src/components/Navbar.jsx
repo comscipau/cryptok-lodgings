@@ -4,10 +4,11 @@ import styles from "../styles";
 import { FaTelegramPlane, FaTwitter, FaDiscord } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { connectToWeb3,connectedAccount } from "../connection";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [nav, setNav] = useState(false);
-
+  const [isConnected,updateConnected] =useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
@@ -47,8 +48,13 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <button className="bg-surface_cryptok my-3 px-4 ml-4 mr-4 rounded-md font-medium text-base text-gold">
-            Connect Wallet
+          <button className="bg-surface_cryptok my-3 px-4 ml-4 mr-4 rounded-md font-medium text-base text-gold" onClick={async()=>{
+            await connectToWeb3();
+            updateConnected(true);
+            props.up(true);
+          }}>
+            {!isConnected && "Connect Wallet"}
+            {isConnected && connectedAccount[0].slice(0,7)+"..."}
           </button>
         </div>
         <div
@@ -95,8 +101,13 @@ const Navbar = () => {
             </ul>
           </div>
           <hr className="m-4 border-gold" />
-          <button className="bg-gold my-3 px-4 ml-8 mr-4 rounded-md font-medium text-base text-surface_cryptok">
-            Connect Wallet
+          <button className="bg-gold my-3 px-4 ml-8 mr-4 rounded-md font-medium text-base text-surface_cryptok" onClick={async()=>{
+            await connectToWeb3();
+            updateConnected(true);
+            props.up(true);
+          }}>
+          {!isConnected && "Connect Wallet"}
+            {isConnected && connectedAccount[0].slice(0,7)+"..."}
           </button>
         </div>
       </div>
