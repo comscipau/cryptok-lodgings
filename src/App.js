@@ -28,7 +28,8 @@ function App() {
           <Route path="/raffle" element={<Raffle up={updateCon} />} />
         </Routes>
         <Footer />
-        <div className="flex justify-center">
+        {/* SHOW POP UP BOX */}
+        {/* <div className="flex justify-center">
           <button
             className="text-white border-[3px] border-gold p-2 m-4 rounded-lg"
             onClick={() => setShowModal(true)}
@@ -36,7 +37,7 @@ function App() {
             Open Modal
           </button>
         </div>
-        <Modal visible={showModal} onClose={closeModal} />
+        <Modal visible={showModal} onClose={closeModal} /> */}
       </div>
     </BrowserRouter>
   );
